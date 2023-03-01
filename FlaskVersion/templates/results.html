@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    {% if not parts %}
+        <p>No parts found for the given serial number.</p>
+    {% else %}
+        {% if additional_info %}
+            <p>Recommended part for {{ brand }} {{ vehicle_type }}:</p>
+            <p><strong>{{ recommended_part['name'] }}</strong></p>
+            <p>Price: {{ recommended_part['price'] }}</p>
+            <p>Description: {{ recommended_part['description'] }}</p>
+            <p>Link: <a href="{{ recommended_part['link'] }}">{{ recommended_part['link'] }}</a></p>
+            <hr>
+        {% endif %}
+
+        <p>All parts for serial number {{ serial_number }}:</p>
+        <ul>
+        {% for part in parts %}
+            <li>
+                <p><strong>{{ part['name'] }}</strong></p>
+                <p>Price: {{ part['price'] }}</p>
+                <p>Description: {{ part['description'] }}</p>
+                <p>Link: <a href="{{ part['link'] }}">{{ part['link'] }}</a></p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
