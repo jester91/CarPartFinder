@@ -1,21 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Search for Car Parts On Ovoko</title>
+	<style>
+		.loading-container {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+		}
+
+		.loading-message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
 </head>
+
 <body>
-	<h1>Search for Car Parts On Ovoko</h1>
-	<form action="{{ url_for('results') }}" method="POST">
+	<div class="loading-container">
+		<div class="loading-message">Loading...</div>
+	</div>
+
+	<h1>Car Part Finder</h1>
+	<form method="POST" action="/">
 		<label for="serial_number">Serial Number:</label>
 		<input type="text" id="serial_number" name="serial_number" required>
-
-		<label for="brand">Brand:</label>
-		<input type="text" id="brand" name="brand"><br>
-
-		<label for="vehicle_type">Vehicle Type:</label>
-		<input type="text" id="vehicle_type" name="vehicle_type"><br>
-
-		<input type="submit" value="Search">
+		<button type="submit">Search</button>
 	</form>
+
+	<script>
+		// JavaScript to show/hide loading status
+		window.addEventListener('DOMContentLoaded', function () {
+			var loadingContainer = document.querySelector('.loading-container');
+
+			// Show loading status when the form is submitted
+			document.querySelector('form').addEventListener('submit', function () {
+				loadingContainer.style.display = 'block';
+			});
+
+			// Hide loading status when the page finishes loading
+			window.addEventListener('load', function () {
+				loadingContainer.style.display = 'none';
+			});
+		});
+	</script>
 </body>
+
+</html>
+
 </html>
