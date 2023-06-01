@@ -33,14 +33,3 @@ Click the "Search" button to retrieve the matching parts and view the results.
 
 Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-License
-This project is licensed under the MIT License.
-
-Acknowledgements
-Flask
-Selenium
-BeautifulSoup
-
-
-Feel free to modify and customize the README according to your project's specif
