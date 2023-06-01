@@ -26,7 +26,7 @@ Change into the project directory:
 Start the Flask server:
 ```python app.py```
 
-Open a web browser and go to http://localhost:5000 to access the Part Finder web application.
+Open a web browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000) to access the Part Finder web application.
 
 Enter the serial number of the part and optionally provide additional information about your vehicle.
 
