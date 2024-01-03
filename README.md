@@ -14,7 +14,7 @@ Part Finder is a web application built with Flask that allows users to search fo
 ### Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/part-finder.git
+git clone https://github.com/jester91/part-finder.git
 
 2. Change into the project directory:
 ```cd part-finder```
